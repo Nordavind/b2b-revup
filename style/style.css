@@ -1431,8 +1431,8 @@ padding: 15px 25px 15px 25px;
 
   .nav-container,
   .navbar-fixed {
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .nav-mob-deploy ul,
@@ -1442,7 +1442,7 @@ padding: 15px 25px 15px 25px;
 
   .header-content {
     overflow: hidden;
-    padding: 0px 25px 0px 25px;
+    padding: 0px 20px 0px 20px;
   }
 
   .header-ellipse {
@@ -1451,7 +1451,7 @@ padding: 15px 25px 15px 25px;
   }
 
   .container-w {
-    padding: 60px 25px 60px 25px;
+    padding: 60px 20px 60px 20px;
   }
 
   .postu-number-grid {
@@ -1482,7 +1482,7 @@ padding: 15px 25px 15px 25px;
   }
 
   .crono-card {
-    padding: 25px 25px 60px 25px;
+    padding: 20px 20px 60px 20px;
   }
 
   .pricing-card-grid {
@@ -1517,11 +1517,11 @@ padding: 15px 25px 15px 25px;
   }
 
   .container-cf {
-    padding: 60px 25px 0px 25px;
+    padding: 60px 20px 0px 20px;
   }
 
   .cf-wrapper {
-    padding: 35px 25px;
+    padding: 35px 20px;
     border-radius: 5px;  
     box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.05);
   }
@@ -1533,11 +1533,11 @@ padding: 15px 25px 15px 25px;
   }
 
   .footer-container-a {
-    padding: 60px 25px 60px 25px;
+    padding: 60px 20px 60px 20px;
   }
 
   .footer-container-b {
-    padding: 0px 25px 0px 25px;
+    padding: 0px 20px 0px 20px;
   }
 
 }

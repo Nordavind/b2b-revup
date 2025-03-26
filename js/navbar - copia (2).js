@@ -62,22 +62,27 @@ document.addEventListener("DOMContentLoaded", () => {
   // Ejecuta el observer al pasar por inicio para el deloy del menu
   observer.observe(inicio);
 
-  // Navbar Hide on Scroll: Funcion que hace desaparecer el navbar en scroll down
-  let lastScrollTop = 0;
+  // Navbar Hide on Sroll: Funcion que hace desaparecer el navbar en scroll down
+    let lastScrollTop = 0;
 
-  const handleScroll = () => {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    window.addEventListener('scroll', function() {
+      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (isInicioOutOfView) {
-      if (currentScroll > lastScrollTop) {
-        navbarClassFixed.classList.remove('show');
-      } else {
-        navbarClassFixed.classList.add('show');
+      // Si el scroll es hacia abajo (usuario baja)
+      if (isInicioOutOfView) {  // Solo funciona si el booleano es true
+        if (currentScroll > lastScrollTop) {
+          // Ocultar el navbar moviéndolo hacia arriba
+          navbarClassFixed.classList.remove('show');
+        } else {
+          // Si el scroll es hacia arriba (usuario sube)
+          // Mostrar el navbar
+          navbarClassFixed.classList.add('show');
+        }
       }
-    }
 
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-  };
+      // Guarda el valor del último scroll para comparar en el siguiente evento
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  });
 
   // Debounce para mejorar el rendimiento
   const debounce = (func, wait) => {

@@ -42,16 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  let isInicioOutOfView = false;  // Booleano que se creará
-
   // Navbar Show: Funcion que hace aparecer y desaparecer el .navbar-fixed
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (!entry.isIntersecting) {
             navbarClassFixed.classList.add('show');
-            isInicioOutOfView = true;
         } else {
-            isInicioOutOfView = false;
             navbarClassFixed.classList.remove('show');
             hambLinkFixed.classList.remove("active");
             navbarFixed.classList.remove("open");
@@ -62,31 +58,33 @@ document.addEventListener("DOMContentLoaded", () => {
   // Ejecuta el observer al pasar por inicio para el deloy del menu
   observer.observe(inicio);
 
-  // Navbar Hide on Scroll: Funcion que hace desaparecer el navbar en scroll down
-  let lastScrollTop = 0;
 
-  const handleScroll = () => {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (isInicioOutOfView) {
-      if (currentScroll > lastScrollTop) {
-        navbarClassFixed.classList.remove('show');
-      } else {
-        navbarClassFixed.classList.add('show');
-      }
-    }
 
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-  };
 
-  // Debounce para mejorar el rendimiento
-  const debounce = (func, wait) => {
-    let timeout;
-    return function(...args) {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => func.apply(this, args), wait);
-    };
-  };
 
-  window.addEventListener('scroll', debounce(handleScroll, 10));
+// // Navbar Hide on Sroll: Funcion que hace desaparecer el navbar en scroll down
+//   let lastScrollTop = 0;
+
+//   window.addEventListener('scroll', function() {
+//     let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+//     // Si el scroll es hacia abajo (usuario baja)
+//     if (currentScroll > lastScrollTop) {
+//       // Ocultar el navbar moviéndolo hacia arriba
+//       navbarClassFixed.classList.remove('show');
+//     } else {
+//       // Si el scroll es hacia arriba (usuario sube)
+//       // Mostrar el navbar
+//       navbarClassFixed.classList.add('show');
+//     }
+
+//     // Guarda el valor del último scroll para comparar en el siguiente evento
+//     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+//   });
+
+  
+
+
+
 });
