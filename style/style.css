@@ -322,7 +322,7 @@ a:hover {
   font-size: 1.125rem;
   line-height: 1.125rem;
   font-weight: 500;
-  padding: 12px 40px;
+  padding: 12px 25px;
   background-color: var(--pink);
   border: none;
 }
@@ -470,8 +470,8 @@ nav {
 
 /* Navbar Mob Fixed */
 .header-logo-fixed {
-  width: 160px;
-  height: auto;
+  height: 42px;
+  width: auto;
 }
 
 .navbar-fixed {
@@ -496,6 +496,14 @@ nav {
   box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.1);
   transition: top 0.3s ease-in-out;
   z-index: 999;
+}
+
+.wrapper-button-nav-fixed {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar-fixed.show {
@@ -1423,8 +1431,8 @@ padding: 15px 25px 15px 25px;
 
   .nav-container,
   .navbar-fixed {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
   }
 
   .nav-mob-deploy ul,
@@ -1434,7 +1442,7 @@ padding: 15px 25px 15px 25px;
 
   .header-content {
     overflow: hidden;
-    padding: 0px 20px 0px 20px;
+    padding: 0px 25px 0px 25px;
   }
 
   .header-ellipse {
@@ -1443,7 +1451,7 @@ padding: 15px 25px 15px 25px;
   }
 
   .container-w {
-    padding: 60px 20px 60px 20px;
+    padding: 60px 25px 60px 25px;
   }
 
   .postu-number-grid {
@@ -1466,7 +1474,7 @@ padding: 15px 25px 15px 25px;
   }
 
   .meto-card {
-    padding: 20px;
+    padding: 25px;
   }
 
   .pricing-card {
@@ -1474,7 +1482,7 @@ padding: 15px 25px 15px 25px;
   }
 
   .crono-card {
-    padding: 20px 20px 60px 20px;
+    padding: 25px 25px 60px 25px;
   }
 
   .pricing-card-grid {
@@ -1509,11 +1517,11 @@ padding: 15px 25px 15px 25px;
   }
 
   .container-cf {
-    padding: 60px 20px 0px 20px;
+    padding: 60px 25px 0px 25px;
   }
 
   .cf-wrapper {
-    padding: 20px;
+    padding: 35px 25px;
     border-radius: 5px;  
     box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.05);
   }
@@ -1525,11 +1533,11 @@ padding: 15px 25px 15px 25px;
   }
 
   .footer-container-a {
-    padding: 60px 20px 60px 20px;
+    padding: 60px 25px 60px 25px;
   }
 
   .footer-container-b {
-    padding: 0px 20px 0px 20px;
+    padding: 0px 25px 0px 25px;
   }
 
 }
