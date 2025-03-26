@@ -323,7 +323,12 @@ a:hover {
   line-height: 1.125rem;
   font-weight: 500;
   padding: 12px 40px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: var(--pink);
+  border: none;
+}
+
+.btn-header:hover {
+  background-color: var(--pink);
 }
 
 .btn-inactive {
@@ -459,19 +464,30 @@ nav {
   padding: 0;
 }
 
-.nav-mob-deploy li:last-child,
-.nav-mob-deploy-fixed li:last-child {
+.nav-mob-deploy li:last-child {
   margin-top: 10px;
 }
 
 /* Navbar Mob Fixed */
+.header-logo-fixed {
+  width: 160px;
+  height: auto;
+}
+
 .navbar-fixed {
   position: fixed;
   top: -93px;
   left: 0;
   right: 0;
   width: 100%;
-  background: linear-gradient(to right, #5681be, #4b74b4);
+  background-color: #547FBC;
+  background-image: 
+    linear-gradient(to right, rgba(240, 149, 207, 0.5) 20%, rgba(240, 149, 207, 0) 80%), 
+    linear-gradient(to right, #4D88CE 35%, rgba(50, 83, 158, 0) 100%),
+    linear-gradient(to right, #547FBC 30%, rgba(50, 83, 158, 0) 100%);
+  background-blend-mode: normal;
+  background-size: cover;
+  background-position: center center;
   padding: 20px 50px;
   display: none;
   /* display: flex; */
@@ -489,7 +505,14 @@ nav {
 .nav-mob-deploy-fixed {
   position: absolute;
   z-index: 999;
-  background: linear-gradient(to right, #5681be, #4b74b4);
+  background-color: #32539E;
+  background-image: 
+    radial-gradient(circle at bottom right, rgba(240, 149, 207, 0.5) 20%, rgba(240, 149, 207, 0) 80%), 
+    radial-gradient(circle at center bottom, #76A9E6 35%, rgba(50, 83, 158, 0) 100%),
+    radial-gradient(circle at -50% top, #547FBC 30%, rgba(50, 83, 158, 0) 100%);
+  background-blend-mode: normal;
+  background-size: cover;
+  background-position: center center;
   width: 100%;
   right: 0px;
   top: 90px;
@@ -499,7 +522,7 @@ nav {
 }
 
 .nav-mob-deploy-fixed.open {
-  height: 490px;
+  height: 415px;
   padding: 40px 0;
   border-bottom: 2px solid var(--blue-b);
 }
