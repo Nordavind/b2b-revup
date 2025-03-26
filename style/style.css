@@ -445,19 +445,63 @@ nav {
 }
 
 .nav-mob-deploy.open {
-  height: 485px;
+  height: 490px;
   padding: 40px 0;
 }
 
 .nav-mob-deploy ul,
 .nav-mob-deploy-fixed ul {
-  margin-left: 20px;
+  margin: 0 0 0 50px;
   display: flex;
   flex-flow: column nowrap;
   gap: 20px;
   list-style: none;
   padding: 0;
-  margin: 0 0 0 30px;
+}
+
+.nav-mob-deploy li:last-child,
+.nav-mob-deploy-fixed li:last-child {
+  margin-top: 10px;
+}
+
+/* Navbar Mob Fixed */
+.navbar-fixed {
+  position: fixed;
+  top: -93px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: linear-gradient(to right, #5681be, #4b74b4);
+  padding: 20px 50px;
+  display: none;
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.1);
+  transition: top 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.navbar-fixed.show {
+  top: 0;
+}
+
+.nav-mob-deploy-fixed {
+  position: absolute;
+  z-index: 999;
+  background: linear-gradient(to right, #5681be, #4b74b4);
+  width: 100%;
+  right: 0px;
+  top: 90px;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-mob-deploy-fixed.open {
+  height: 490px;
+  padding: 40px 0;
+  border-bottom: 2px solid var(--blue-b);
 }
 
 /* Header content */
@@ -1120,6 +1164,10 @@ padding: 15px 25px 15px 25px;
   .nav-wrapper-c {
     display: block;
   }
+
+  .navbar-fixed {
+    display: flex;
+  }
 }
 
 /* Medium (≥768px y <992px) */
@@ -1142,9 +1190,15 @@ padding: 15px 25px 15px 25px;
       radial-gradient(circle at -50% top, #547FBC 30%, rgba(50, 83, 158, 0) 100%);
   }
 
-  .nav-container {
+  .nav-container,
+  .navbar-fixed {
     padding-left: 40px;
     padding-right: 40px;
+  }
+
+  .nav-mob-deploy ul,
+  .nav-mob-deploy-fixed ul {
+    margin: 0 0 0 40px;
   }
 
   .header-logo {
@@ -1344,8 +1398,25 @@ padding: 15px 25px 15px 25px;
     margin-bottom: 39px;
   }
 
+  .nav-container,
+  .navbar-fixed {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .nav-mob-deploy ul,
+  .nav-mob-deploy-fixed ul {
+    margin: 0 0 0 20px;
+  }
+
   .header-content {
     overflow: hidden;
+    padding: 0px 20px 0px 20px;
+  }
+
+  .header-ellipse {
+    max-width: 100%;
+    top: 30px;
   }
 
   .container-w {
@@ -1369,6 +1440,18 @@ padding: 15px 25px 15px 25px;
   .postu-card-border {
     border-left: none;
     border-top: 1px solid #b3b8d1;
+  }
+
+  .meto-card {
+    padding: 20px;
+  }
+
+  .pricing-card {
+    padding: 35px 35px 35px 35px;
+  }
+
+  .crono-card {
+    padding: 20px 20px 60px 20px;
   }
 
   .pricing-card-grid {
