@@ -933,10 +933,11 @@ padding: 15px 25px 15px 25px;
 }
 
 .cf-text-wrapper {
-  max-width: 35%;
+  width: 35%;
 }
 
 .cf-wrapper {
+  width: 65%;
   background-color: var(--white);
   padding: 40px;
   border-radius: 25px;  
@@ -982,7 +983,20 @@ padding: 15px 25px 15px 25px;
 #form-telefono,
 #form-linke,
 #form-origen,
-#form-mensaje {
+#form-mensaje,
+#form-nombre-e, 
+#form-correo-e, 
+#form-telefono-e, 
+#form-linke-e, 
+#form-company-e, 
+#form-cargo-e, 
+#form-web-e, 
+#form-industria-e, 
+#form-ventas-e, 
+#form-empleados-e, 
+#form-pais-e, 
+#form-origen-e, 
+#form-mensaje-e {
   padding-left: 15px;
   border: 1px solid var(--font);
   background: var(--white);
@@ -993,19 +1007,33 @@ padding: 15px 25px 15px 25px;
 #form-correo,
 #form-telefono,
 #form-linke,
-#form-origen {
+#form-origen,
+#form-nombre-e, 
+#form-correo-e, 
+#form-telefono-e, 
+#form-linke-e, 
+#form-company-e, 
+#form-cargo-e, 
+#form-web-e, 
+#form-industria-e, 
+#form-ventas-e, 
+#form-empleados-e, 
+#form-pais-e, 
+#form-origen-e {
   flex: 1 0 140px;
   height: 45px;
 }
 
-#form-mensaje {
+#form-mensaje,
+#form-mensaje-e {
   width: 100%;
   height: 120px;
   padding: 15px;
   resize: none;
 }
 
-#form-submit {
+#form-submit,
+#form-submit-e {
   font-family: 'Outfit', sans-serif;
   font-size: 1.0625rem;
   line-height: 1.0625rem;
@@ -1025,9 +1053,21 @@ padding: 15px 25px 15px 25px;
   margin: auto;
 }
 
-#form-submit:hover {
+#form-submit:hover,
+#form-submit-e:hover {
   background-color: var(--blue-b);
 }
+
+#formPersona.show,
+#formEmpresa.show {
+  display: block;
+}
+
+#formPersona.hide, 
+#formEmpresa.hide {
+  display: none;
+}
+
 
 /* Footer */
 .footer-bg {
@@ -1373,7 +1413,11 @@ padding: 15px 25px 15px 25px;
   }
 
   .cf-text-wrapper {
-    max-width: 100%;
+    width: 100%;
+  }
+
+  .cf-wrapper {
+    width: 100%;
   }
 
   .footer-container-a {

@@ -2,6 +2,9 @@
 <html lang="es">
 
 <head>
+  <!-- Temporal -->
+  <meta name="robots" content="noindex, nofollow">
+  <!-- Fin Temporal -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>B2B Rev UP | Lorem Ipsum</title>
@@ -9,14 +12,14 @@
   <meta name="keywords" content="">
   <link rel="icon" href="./img/favico.png" type="image/x-icon">
   <link rel="shortcut icon" href="./img/favico.png" type="image/x-icon">
-  <link rel="canonical" href="https://www.b2brevup.cl" />
+  <link rel="canonical" href="https://www.b2brevup.com" />
   <!-- Open Graph -->
   <meta property="og:title" content="B2B Rev UP | Lorem Ipsum">
   <meta property="og:description" content="">
-  <meta property="og:image" content="https://www.b2brevup.cl/img/og-image.jpg">
+  <meta property="og:image" content="https://www.b2brevup.com/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://www.b2brevup.cl/">
+  <meta property="og:url" content="https://www.b2brevup.com/">
   <meta property="og:type" content="website">
   <!-- Bootstrap CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -30,8 +33,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <!-- script -->
-  <!-- <script defer src="./js/script.js"></script> -->
-  <script defer src="./js/navbar.js"></script>
+  <script defer src="./js/script.js"></script>
 </head>
 
 <body>
@@ -48,7 +50,7 @@
             <li><a href="#postulacion" class="nav-link">Postulación</a></li>
             <li><a href="#valor" class="nav-link">Valor Inscripción</a></li>
             <li><a href="#expertos-b2b" class="nav-link">Expertos B2B</a></li>
-            <li><button class="btn-ghost btn-header" onclick="location.href='#postular'">Inscribirse</button></li>
+            <li><button class="btn-ghost btn-header" onclick="location.href='#inscripcion'">Inscribirse</button></li>
           </ul>
         </div>
         <div class="nav-wrapper-c">
@@ -544,18 +546,18 @@
           </div>
           <div>
             <p class="p-white pricing-card-text pricing-card-text-b">Precio: <span class="p-bold-w">USD $490</span> + Impuestos.</p>
-            <button class="btn-ghost" onclick="location.href='#postular'">Quiero Postular</button>
+            <button class="btn-ghost" onclick="location.href='#inscripcion'">Quiero Inscribirme</button>
           </div>
         </div>
         <div class="pricing-card">
           <div>
             <img class="pricing-card-ico" src="img/equipos-ico.svg" alt="icono personas">
-            <h4 class="h4-white">Para <span class="p-bold-w">Equipos</span></h4>
+            <h4 class="h4-white">Para <span class="p-bold-w">Empresas</span></h4>
             <p class="p-white pricing-card-text pricing-card-text-border">Pensado para empresas que <span class="p-bold-w">utilizan correos corporativos</span> y desean inscribir <span class="p-bold-w">hasta 3 personas del mismo equipo</span>. Ideal para lideres de la empresa, marketing y ventas.</p>
           </div>
           <div>
             <p class="p-white pricing-card-text pricing-card-text-b">Precio: <span class="p-bold-w">USD $790</span> + Impuestos.</p>
-            <button class="btn-ghost" onclick="location.href='#postular'">Quiero Postular</button>
+            <button class="btn-ghost" onclick="location.href='#inscripcion'">Quiero Inscribirme</button>
           </div>
         </div>
       </div>
@@ -703,7 +705,7 @@
 
     </div>
   </section>
-  <section id="postular" class="light-bg cf-bg-main">
+  <section id="inscripcion" class="light-bg cf-bg-main">
     <div class="container-cf">
       <div class="cf-text-wrapper">
         <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
@@ -712,8 +714,8 @@
       </div>
       <div class="cf-wrapper">
         <div class="cf-selector">
-            <button class="btn-inactive btn-active-pink" onclick="location.href='#'">Persona</button>
-            <button class="btn-inactive" onclick="location.href='#'">Startup</button>
+          <button class="btn-inactive btn-active-pink" id="btnPersona">Persona</button>
+          <button class="btn-inactive" id="btnEmpresa">Empresa</button>
         </div>
         <div id="formPersona" class="formulario-main">
           <form action="" method="POST">
@@ -727,8 +729,8 @@
             <input type="email" id="form-correo" name="Email" placeholder="Correo Electrónico" required>
             <input type="number" id="form-telefono" name="Phone" placeholder="Teléfono" required>
             <input type="text" id="form-linke" name="Url Linkedin" placeholder="URL Perfil Linkedin" required>
-
-            <select id="form-origen" name="Origen" required>
+            
+            <select id="form-origen" name="Origin" required>
               <option value="" disabled selected>¿Como supiste del programa?</option>
               <option value="Linkedin">Linkedin</option>
               <option value="Instagram">Instagram</option>
@@ -737,10 +739,41 @@
               <option value="Anuncio">Anuncio</option>
               <option value="Otro">Otro</option>
             </select>
-
+            
             <textarea id="form-mensaje" name="message" required placeholder="¿Porque estas postulando al programa?"></textarea>
-
             <input type="submit" id="form-submit" value="Enviar Mensaje">
+          </form>
+        </div>
+        <div id="formEmpresa" class="formulario-main hide">
+          <form action="" method="POST">
+            <input type="hidden" name="access_key" value="">
+            <input type="hidden" name="subject" value="Lead Postulación Persona B2B RevUP">
+            <input type="hidden" name="from_name" value="B2B Rev UP web">
+            <input type="hidden" name="redirect" value="">
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+            <input type="text" id="form-nombre-e" name="First Name" placeholder="Nombre" required>
+            <input type="email" id="form-correo-e" name="Email" placeholder="Correo Electrónico" required>
+            <input type="number" id="form-telefono-e" name="Phone" placeholder="Teléfono" required>
+            <input type="text" id="form-linke-e" name="Url Linkedin" placeholder="URL Linkedin" required>
+            <input type="text" id="form-company-e" name="Company Name" placeholder="Nombre Empresa" required>
+            <input type="text" id="form-cargo-e" name="Position" placeholder="Cargo" required>
+            <input type="text" id="form-web-e" name="Web" placeholder="Sitio Web" required>
+            <input type="text" id="form-industria-e" name="Industry" placeholder="Industria" required>
+            <input type="number" id="form-ventas-e" name="Anual Revenue" placeholder="Ventas Anuales" required>
+            <input type="number" id="form-empleados-e" name="Employes" placeholder="Empleados" required>
+            <input type="text" id="form-pais-e" name="Country" placeholder="País" required>
+            <select id="form-origen-e" name="Origin" required>
+              <option value="" disabled selected>¿Como supiste del programa?</option>
+              <option value="Linkedin">Linkedin</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Colega / Amigo">Colega / Amigo</option>
+              <option value="Busqueda en Google">Búsqueda en Google</option>
+              <option value="Anuncio">Anuncio</option>
+              <option value="Otro">Otro</option>
+            </select>
+            <textarea id="form-mensaje-e" name="Message" required placeholder="¿Porque estas postulando al programa?"></textarea>
+            <input type="submit" id="form-submit-e" value="Enviar Mensaje">
           </form>
         </div>
       </div>
@@ -765,26 +798,23 @@
           <li><a href="#postulacion" class="nav-link-footer">Postulación</a></li>
           <li><a href="#valor" class="nav-link-footer">Valor Inscripción</a></li>
           <li><a href="#expertos-b2b" class="nav-link-footer">Expertos B2B</a></li>
-          <li><a href="#postular" class="nav-link-footer">Postular</a></li>
+          <li><a href="#inscripcion" class="nav-link-footer">Inscribirse</a></li>
         </ul>
       </div>
       <div class="footer-item-c">
         <h6>Contacto</h6>
         <div class="contact-links-wrapper">
           <div class="contact-link-item">
-            <img class="contact-ico" src="img/footer-phone-ico.svg" alt="icono telefono"> <a class="link-text-footer" href="tel:+56912345678" target="_blank" rel="noopener noreferrer">+569 1234 5678</a>
+            <img class="contact-ico" src="img/footer-phone-ico.svg" alt="icono telefono"> <a class="link-text-footer" href="tel:+51998008237" target="_blank" rel="noopener noreferrer">+51 998 008 237</a>
           </div>
           <div class="contact-link-item">
-            <img class="contact-ico" src="img/footer-phone-ico.svg" alt="icono telefono"> <a class="link-text-footer" href="tel:+56912345678" target="_blank" rel="noopener noreferrer">+569 1234 5678</a>
+            <img class="contact-ico" src="img/footer-env-ico.svg" alt="icono email"> <a class="link-text-footer" href="mailto:hola@b2brevup.com" target="_blank" rel="noopener noreferrer">hola@b2brevup.com</a>
           </div>
           <div class="contact-link-item">
-            <img class="contact-ico" src="img/footer-env-ico.svg" alt="icono email"> <a class="link-text-footer" href="mailto:contacto@b2brevup.com" target="_blank" rel="noopener noreferrer">contacto@b2brevup.com</a>
+            <img class="contact-ico" src="img/footer-url-ico.svg" alt="icono web"> <a class="link-text-footer" href="https://www.ngrowth.io/">ngrowth.io</a>
           </div>
           <div class="contact-link-item">
-            <img class="contact-ico" src="img/footer-url-ico.svg" alt="icono web"> <a class="link-text-footer" href="https://www.ngrowth.io/">www.ngrowth.io</a>
-          </div>
-          <div class="contact-link-item">
-            <img class="contact-ico" src="img/footer-url-ico.svg" alt="icono web"> <a class="link-text-footer" href="http://www.rocketrevenuehq.com/">www.rocketrevenuehq.com</a>
+            <img class="contact-ico" src="img/footer-url-ico.svg" alt="icono web"> <a class="link-text-footer" href="http://www.rocketrevenuehq.com/">rocketrevenuehq.com</a>
           </div>
         </div>
       </div>
@@ -792,7 +822,7 @@
     <div class="footer-container-b">
       <div class="footer-subwrapper">
         <p class="footer-text-b"><span class="p-bold-w">B2B RevUP</span> | Lorem Ipsum</p>
-        <p class="footer-text-b"> <span class="p-bold-w">©2025 </span> | Todos los derechos reservados.</p>
+        <p class="footer-text-b"> <span class="p-bold-w">©<span id="current-year"></span> </span> | Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
