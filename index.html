@@ -40,6 +40,7 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <!-- script -->
   <script defer src="./js/script.js"></script>
+  <script defer src="./js/form-persona.js"></script>
 </head>
 
 <body>
@@ -909,13 +910,7 @@
           <button class="btn-inactive" id="btnEmpresa">Empresa</button>
         </div>
         <div id="formPersona" class="formulario-main">
-          <form action="" method="POST">
-            <input type="hidden" name="access_key" value="">
-            <input type="hidden" name="subject" value="Lead Postulación Persona B2B RevUP">
-            <input type="hidden" name="from_name" value="B2B Rev UP web">
-            <input type="hidden" name="redirect" value="">
-            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
+          <form id="formPersonaEntity">
             <input type="text" id="form-nombre" name="First Name" placeholder="Nombre" required>
             <input type="email" id="form-correo" name="Email" placeholder="Correo Electrónico" required>
             <input type="number" id="form-telefono" name="Phone" placeholder="Teléfono" required>
