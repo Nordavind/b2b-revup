@@ -575,6 +575,10 @@ nav {
   width: 50%;
 }
 
+.header-text-wrapper h3 {
+  line-height: 1.4375rem;
+}
+
 /* Post Header */
 .video {
   box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.18);
