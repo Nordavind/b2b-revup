@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Ejecuta el observer al pasar por inicio para el deloy del menu
+  // Ejecuta el observer al pasar por inicio para el deploy del menu
   observer.observe(inicio);
 
   // Navbar Hide on Sroll: Funcion que hace desaparecer el navbar en scroll down
