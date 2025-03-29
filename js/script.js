@@ -130,9 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const collapseElements = document.querySelectorAll("#crono-collapse .collapse");
 
   collapseElements.forEach(collapse => {
-
     collapse.addEventListener("show.bs.collapse", () => {
-
+      // Cierra el elemento abierto al abrir uno nuevo
       collapseElements.forEach(otherCollapse => {
         if (otherCollapse !== collapse) {
           const bsCollapse = bootstrap.Collapse.getInstance(otherCollapse);
@@ -141,6 +140,12 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
       });
+      // Actualiza AOS cuando se abre un collapse
+      AOS.refresh();
+    });
+    // Actualiza AOS cuando se cierra un collapse
+    collapse.addEventListener("hidden.bs.collapse", () => {
+      AOS.refresh();
     });
   });
 
