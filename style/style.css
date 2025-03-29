@@ -356,6 +356,41 @@ a:hover {
   background-color: var(--pink);
 }
 
+.btn-fixed-wrapper {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  bottom: -42px;
+  transition: bottom 0.3s ease-in-out;
+}
+
+.btn-fixed-wrapper.show {
+  bottom: 30px;
+}
+
+.btn-fixed {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.125rem;
+  font-weight: 500;
+  letter-spacing: .0313rem;
+  padding: 15px 30px;
+  color: var(--white);
+  background-color: var(--pink);
+  border: none;
+  box-sizing: border-box;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn-fixed:hover {
+  background-color: var(--blue-b);
+}
+
 /* Header y navbar desktop */
 .nav-container {
   max-width: 1388px;
@@ -626,17 +661,22 @@ margin-bottom: 0px;
 }
 
 /* Cronograma */
+.container-crono {
+  padding: 100px 50px 65px 50px;
+}
+
 .crono-grid {
+  column-count: 2;
+  column-gap: 30px;
   margin-top: 55px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
 }
 
 .crono-card {
-  padding: 35px 35px 60px 35px;
+  break-inside: avoid;
+  margin-bottom: 35px;
+  padding: 35px 35px 35px 35px;
   border: 1px solid #b2b6d0;
-  border-radius: 0px 25px 25px 25px;
+  border-radius: 25px 25px 25px 25px;
 }
 
 .crono-date {
@@ -695,6 +735,47 @@ margin-bottom: 0px;
 .crono-text-last {
   margin-bottom: 27px;
 }
+
+/* Collapse BS Crono */
+.btn-rm-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.btn-rm-line {
+  border-bottom: 1px solid #b3b8d1;
+  width: 33%;
+  height: 100%;
+}
+
+.btn-read-more {
+    background: none;
+    border: none;
+    color: var(--font);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: .0313rem;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    white-space: nowrap;
+  }
+  
+  .btn-read-more:hover {
+    color: var(--pink);
+  }
+
+  .btn-read-more.active {
+    color: var(--pink);
+  }
 
 /* Proceso de postulacion */
 .postu-number-grid {
@@ -1254,6 +1335,10 @@ padding: 15px 25px 15px 25px;
     text-align: center; 
   }
 
+  .btn-fixed:hover {
+    background-color: var(--pink);
+  }
+
   .title-cut {
     width: 100%;
   }
@@ -1304,6 +1389,10 @@ padding: 15px 25px 15px 25px;
     padding: 80px 40px 80px 40px;
   }
 
+  .container-crono {
+    padding: 80px 40px 45px 40px;
+  }
+
   .corner-logo {
     display: none;
   }
@@ -1346,13 +1435,9 @@ padding: 15px 25px 15px 25px;
   }
 
   .crono-grid {
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-    gap: 30px;
-  }
-  
-  .crono-card {
-    padding: 40px 40px 60px 40px;
+    column-count: 1;
+    column-gap: 30px;
+    margin-top: 55px;
   }
   
   #postulacion {
@@ -1483,6 +1568,14 @@ padding: 15px 25px 15px 25px;
     padding-right: 20px;
   }
 
+  .btn-fixed-wrapper {
+    right: 20px;
+  }
+  
+  .btn-fixed-wrapper.show {
+    bottom: 20px;
+  }
+
   .nav-mob-deploy ul,
   .nav-mob-deploy-fixed ul {
     margin: 0 0 0 20px;
@@ -1500,6 +1593,10 @@ padding: 15px 25px 15px 25px;
 
   .container-w {
     padding: 60px 20px 60px 20px;
+  }
+
+  .container-crono {
+    padding: 60px 20px 25px 20px;
   }
 
   .postu-number-grid {
@@ -1527,10 +1624,6 @@ padding: 15px 25px 15px 25px;
 
   .pricing-card {
     padding: 35px 35px 35px 35px;
-  }
-
-  .crono-card {
-    padding: 20px 20px 60px 20px;
   }
 
   .pricing-card-grid {

@@ -12,6 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const inicio = document.getElementById('inicio');
   const navbarClassFixed = document.querySelector('.navbar-fixed');
 
+  // Const de funcion "Btn Fixed"
+  const btnFixed = document.getElementById('btnFixed');
+
   // Const del Form Changer
   const btnPersona = document.getElementById("btnPersona");
   const btnEmpresa = document.getElementById("btnEmpresa");
@@ -50,17 +53,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let isInicioOutOfView = false;  // Booleano que se creará
 
-  // Navbar Show: Funcion que hace aparecer y desaparecer el .navbar-fixed
+  // Navbar Show: Funcion que hace aparecer y desaparecer el .navbar-fixed y el btnFixed
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) {
         navbarClassFixed.classList.add('show');
+        btnFixed.classList.add('show')
         isInicioOutOfView = true;
       } else {
         isInicioOutOfView = false;
         navbarClassFixed.classList.remove('show');
         hambLinkFixed.classList.remove("active");
         navbarFixed.classList.remove("open");
+        btnFixed.classList.remove('show')
       }
     });
   });
@@ -119,6 +124,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
   btnEmpresa.addEventListener("click", () => {
     toggleForms(btnEmpresa, btnPersona, formEmpresa, formPersona);
+  });
+
+  // Fix collapse acordeones cronograma via JS
+  const collapseElements = document.querySelectorAll("#crono-collapse .collapse");
+
+  collapseElements.forEach(collapse => {
+
+    collapse.addEventListener("show.bs.collapse", () => {
+
+      collapseElements.forEach(otherCollapse => {
+        if (otherCollapse !== collapse) {
+          const bsCollapse = bootstrap.Collapse.getInstance(otherCollapse);
+          if (bsCollapse) {
+            bsCollapse.hide();
+          }
+        }
+      });
+    });
+  });
+
+});
+
+// Cambia el leer mas de los botones de los acordeones del cronograma a activo
+const buttons = document.querySelectorAll('.btn-read-more');
+
+buttons.forEach(button => {
+  button.addEventListener('click', function() {
+
+    buttons.forEach(b => {
+      if (b !== button && b.classList.contains('active')) {
+
+        b.classList.remove('active');
+        b.textContent = 'Leer Más';
+      }
+    });
+
+    if (button.classList.contains('active')) {
+
+      button.classList.remove('active');
+      button.textContent = 'Leer Más';
+    } else {
+
+      button.classList.add('active');
+      button.textContent = 'Leer Menos';
+    }
   });
 });
 
